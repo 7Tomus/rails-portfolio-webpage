@@ -12,4 +12,12 @@
   <p class="body">
     <%= @project.description %>
   </p>
+
+  <div id="comments">
+    <h2><%= @project.posts.count %> Posts</h2>
+    <%= render @project.posts %>
+
+    <h3>Add a post:</h3>
+    <%= render "posts/form" %>
+  </div>
 </div>
