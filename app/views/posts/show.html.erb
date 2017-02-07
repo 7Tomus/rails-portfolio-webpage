@@ -1,0 +1,15 @@
+<div id="post_content">
+  <h1 class="title">
+    <%= @post.title %>
+  </h1>
+
+  <p class="body">
+    <img alt="post image" src="<%= @post.image %>" />
+    <br>
+    <%= @post.description %>
+  </p>
+
+  <p class="date">
+    Created <%= time_ago_in_words(@post.created_at) %> ago
+  </p>
+</div>

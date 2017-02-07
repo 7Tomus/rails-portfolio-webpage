@@ -1,7 +1,9 @@
 class ProjectsController < ApplicationController
 before_action :authenticate_user!, except: [:index, :show]
+
   def index
     @projects = Project.all.order('created_at DESC')
+    @posts = Post.all.order(created_at: :desc)
   end
 
   def new
@@ -19,6 +21,7 @@ before_action :authenticate_user!, except: [:index, :show]
 
   def show
     @project = Project.find(params[:id])
+    @posts = @project.posts.all.order('created_at DESC')
   end
 
   def edit

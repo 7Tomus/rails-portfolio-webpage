@@ -1,6 +1,22 @@
-<% @projects.each do |project| %>
-  <div class="post_wrapper">
-    <h2 class="title"><%= link_to project.title, project %></h2>
-    <p class="date"><%= project.created_at.strftime("%B, %d, %Y") %></p>
-  </div>
+<% if current_page?(root_path) %>
+
+  <% @posts.each do |post| %>
+    <div class="post_wrapper">
+      <h2 class="title"><%= link_to post.title, project_post_path(post.project.id, post.id) %></h2>
+      <p><%= truncate(post.description, :length => 180) %></p><br>
+      <img alt="post image" src="<%= post.image %>" />
+      <p class="date"><%= post.created_at.strftime("%B, %d, %Y") %></p>
+    </div>
+  <% end %>
+
+<% elsif current_page?(projects_path) %>
+
+    <% @projects.each do |project| %>
+        <div class="post_wrapper">
+          <h2 class="title"><%= link_to project.title, project %></h2>
+          <p><%= truncate(project.description, :length => 180) %></p>
+          <p class="date"><%= project.created_at.strftime("%B, %d, %Y") %></p>
+        </div>
+    <% end %>
+
 <% end %>

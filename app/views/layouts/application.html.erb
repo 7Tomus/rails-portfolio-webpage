@@ -19,32 +19,37 @@
           <ul>
             <li class="category">Website</li>
             <li><%= link_to "Home", root_path %></li>
+            <li><%= link_to "Projects", projects_path %></li>
             <li><%= link_to "About", about_path %></li>
           </ul>
           <ul>
             <li class="category">Links</li>
-            <li>Reddit</li>
-            <li>Facebook</li>
-            <li>Artstation</li>
+            <li><%= link_to "Reddit", "https://www.reddit.com" %></li>
+            <li><%= link_to "Facebook", "https://www.facebook.com" %></li>
+            <li><%= link_to "Artstation", "https://www.artstation.com/" %></li>
           </ul>
           <% if !user_signed_in? %>
-            <p class="sign_in">Admin Login</p>
+            <%= link_to "Admin Login", new_user_session_path, class: "sign_in" %>
           <% end %>
           </div>
 
   <div id="main_content">
     <div id="header">
       <% if current_page?(root_path) %>
-        <p>All Projects</p>
+        <p>Newest posts</p>
+      <% elsif current_page?(projects_path) %>
+        <p>Projects</p>
       <% elsif current_page?(about_path) %>
         <p>About</p>
       <% else %>
-        <%= link_to "Back to all projects", root_path %>
+        <%= link_to "Back to all projects", projects_path %>
       <% end %>
     <% if user_signed_in? %>
       <div class="buttons">
-        <%= link_to "New Post", new_project_path, class: "button"%>
-        <p class="button">Log Out</p>
+        <% if current_page?(projects_path) %>
+            <%= link_to "New Project", new_project_path, class: "button" %>
+        <% end %>
+        <%= link_to "Log Out", destroy_user_session_path, :method => :delete, class: "button" %>
       </div>
     <% end %>
 
