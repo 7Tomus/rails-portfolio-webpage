@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-
+  before_action :find_post_and_project, only: [:edit, :create, :destroy]
   def edit
     @project = Project.find(params[:project_id])
     @post = Post.find(params[:post_id])
@@ -21,5 +21,12 @@ class CommentsController < ApplicationController
     @comment.destroy
 
     redirect_to project_post_path(@project, @post)
+  end
+
+  private
+
+  def find_post_and_project
+    @project = Project.find(params[:project_id])
+    @post = Post.find(params[:post_id])
   end
 end

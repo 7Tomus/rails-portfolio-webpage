@@ -1,8 +1,7 @@
 class PostsController < ApplicationController
+  before_action :find_post_and_project, only: [:show, :edit, :update]
 
   def show
-    @project = Project.find(params[:project_id])
-    @post = Post.find(params[:id])
     @comments = @post.comments.all.order('created_at DESC')
   end
 
@@ -21,13 +20,9 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @project = Project.find(params[:project_id])
-    @post = Post.find(params[:id])
   end
 
   def update
-    @project = Project.find(params[:project_id])
-    @post = Post.find(params[:id])
     if @post.update(params[:post].permit(:title, :description, :image))
       redirect_to @project
     else
@@ -41,6 +36,13 @@ class PostsController < ApplicationController
     @post.destroy
 
     redirect_to project_path(@project)
+  end
+
+  private
+
+  def find_post_and_project
+    @project = Project.find(params[:project_id])
+    @post = Post.find(params[:id])
   end
 
 end
