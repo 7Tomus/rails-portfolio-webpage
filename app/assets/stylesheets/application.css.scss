@@ -18,6 +18,7 @@
 
 html, body {
   font-family: 'Raleway', sans-serif;
+  background-color: #171717;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -35,9 +36,9 @@ a {
   left: 0;
   top: 0;
   height: 100%;
-  background: #f5f7f9;
+  background: #222222;
   padding: 7em 0 0 0;
-  border-right: 1px solid #d6dce0;
+  border-right: 1px solid #878787;
   #logo {
     width: 40px;
     position: absolute;
@@ -52,22 +53,22 @@ a {
       font-weight: 700;
       font-size: 0.7em;
       text-transform: uppercase;
-      color: #33acb7;
+      color: #8ed6b1;
     }
     li {
       padding: .5em 0;
       a {
-        color: #9eafba;
+        color: #e1e1e1;
         text-decoration: none;
         transition: all .4s ease;
         &:hover {
-          color: #33acb7;
+          color: #8ed6b1;
         }
       }
     }
     .active {
       a {
-        color: #33acb7;
+        color: #8ed6b1;
       }
     }
   }
@@ -76,21 +77,21 @@ a {
     right: 3em;
     top: 80%;
     font-size: .8em;
-    color: #9eafba;
+    color: #838587;
   }
 }
 
 .button {
   outline: none;
   background: transparent;
-  border: 1px solid #d6dce0;
+  border: 1px solid #c3c3c3;
   padding: .5em 1.5em;
   border-radius: 1.5em;
   &:hover {
-    border: 1px solid #33acb7;
-    color: #33acb7;
+    border: 1px solid #8ed6b1;
+    color: #8ed6b1;
     a {
-      color: #33acb7 !important;
+      color: #8ed6b1 !important;
     }
   }
 }
@@ -107,14 +108,14 @@ a {
   margin-left: 250px;
   #header {
     padding: 1em 3em;
-    border-bottom: 1px solid #d6dce0;
-    background: #f5f7f9;
-    color: #9eafba;
+    border-bottom: 1px solid #878787;
+    background: #222222;
+    color: #e1e1e1;
     p {
       display: inline;
     }
     a {
-      color: #9eafba;
+      color: #e1e1e1;
       text-decoration: none;
     }
     .buttons {
@@ -128,16 +129,16 @@ a {
   }
   .post_wrapper {
     padding: 3em;
-    border-bottom: 1px solid #d6dce0;
+    border-bottom: 1px solid #878787;
     .title {
       margin: 0;
       a {
         font-weight: 500;
         text-decoration: none;
-        color: #2a2f35;
+        color: #bbbbbb;
         font-size: 1.5em;
         &:hover {
-          color: #33acb7;
+          color: #8ed6b1;
         }
       }
     }
@@ -145,35 +146,57 @@ a {
       color: #9eafba;
       margin: .5em 0 0 0;
     }
+    .body {
+      color: #bbbbbb;
+    }
+    .date {
+      color: #9eafba;
+      font-size: 0.8em;
+      line-height: 1.75;
+    }
   }
   #post_content {
     padding: 1em 3em;
     .title {
       font-weight: 500;
       text-decoration: none;
-      color: #2a2f35;
+      color: #afafaf;
       font-size: 2.5em;
       margin-bottom: 0;
     }
     .body {
+      color: #bbbbbb;
       font-size: 1.1em;
       line-height: 1.75;
+    }
+    .image {
+      width: auto;
+      height: 250px;
     }
     .date_and_author {
       color: #9eafba;
       margin: .5em 0 2em 0;
     }
+    .date {
+      color: #9eafba;
+      font-size: 0.8em;
+      line-height: 1.75;
+    }
+    .count {
+      color: #9eafba;
+    }
     #comments {
       h2 {
         margin: 3em 0 1em 0;
+        color: #bbbbbb;
         border-bottom: 1px solid #d6dce0;
         padding-bottom: 0.5em;
       }
       h3 {
+        color: #bbbbbb;
         margin-top: 2em;
       }
       .comment {
-        border-bottom: 1px solid #d6dce0;
         padding: 1.5em 2em;
         .clear_both {
           clear: both;
@@ -184,27 +207,33 @@ a {
         .comment_content {
           float: left;
           .comment_name {
+            color: #bbbbbb;
             margin: 1em 0 0 0;
             font-size: 1.0em;
-            text-transform: uppercase;
           }
           .comment_body {
+            color: #bbbbbb;
             font-size: 1.2em;
             margin: 0.2em 0 0 0;
           }
           .comment_time {
+            color: #9eafba;
             margin-top: 1.2em;
             font-size: .8em;
           }
         }
         .button {
           float: right;
+          color: #9eafba;
         }
       }
       input[type="text"], textarea {
         width: 50%;
       }
     }
+  }
+  #login_links{
+    color: #e1e1e1;
   }
   #page_wrapper {
     padding: 3em;
@@ -218,6 +247,7 @@ a {
       }
     }
     #content {
+      color: #e1e1e1;
       h1 {
         font-weight: 500;
       }
@@ -226,7 +256,7 @@ a {
         line-height: 1.75;
       }
       a {
-        color: #33acb7;
+        color: #8ed6b1;
         font-weight: 700;
         text-decoration: none;
       }
@@ -237,11 +267,15 @@ a {
   }
   input[type="text"], input[type="email"], input[type="password"], textarea {
     width: 90%;
-    border: 1px solid #d6dce0;
+    border: 1px solid #868c90;
     border-radius: .35em;
     margin-top: 10px;
     padding: .5em 1em;
     line-height: 1.75;
+    background-color: #b6bcc0;
+  }
+  label{
+    color: #b6bcc0;
   }
   input[type="text"] {
     height: 35px;
@@ -251,6 +285,7 @@ a {
   }
   input[type="submit"] {
     outline: none;
+    color: #b6bcc0;
     background: transparent;
     border: 1px solid #d6dce0;
     padding: .5em 1.5em;
@@ -258,8 +293,8 @@ a {
     border-radius: 1.5em;
     margin-left: .5em;
     &:hover {
-      border: 1px solid #33acb7;
-      color: #33acb7;
+      border: 1px solid #8ed6b1;
+      color: #d6dce0;
     }
   }
 }
