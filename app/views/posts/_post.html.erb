@@ -1,7 +1,7 @@
 <div class="comment clearfix">
   <div class="comment_content">
-    <p class="comment_name"><strong><%= post.title %></strong><br><br></p>
-    <p class="comment_body"><%= post.description %><br><br>
+    <p class="comment_name"><strong><%= link_to post.title, project_post_path(post.project.id, post.id) %></strong><br><br></p>
+    <p class="comment_body"><%= truncate(post.description, :length => 180) %><br><br>
       <img alt="post image" src="<%= post.image %>" /></p>
     <p class="comment_time"><%= time_ago_in_words(post.created_at) %> Ago</p>
   </div>
@@ -10,5 +10,7 @@
          method: :delete,
          class: "button",
          data: {confirm: 'Are you sure?'} %></p>
+  <p><%= link_to 'Edit', edit_project_post_path(@project, post.id),
+         class: "button" %></p>
   <% end %>
 </div>
