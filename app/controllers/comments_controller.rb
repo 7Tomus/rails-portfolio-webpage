@@ -15,10 +15,11 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    @project = Project.find(params[:project_id])
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
     @comment.destroy
 
-   # redirect_to project_post_path(@project, @post)
+    redirect_to project_post_path(@project, @post)
   end
 end
