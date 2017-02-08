@@ -11,5 +11,20 @@
 
   <p class="date">
     Created <%= time_ago_in_words(@post.created_at) %> ago
+    <% if user_signed_in? %>
+       <br>
+       <br>
+       <%= link_to 'Delete', [@post.project, @post], method: :delete, data: {confirm: 'Are you sure?'} %>
+       |
+       <%= link_to 'Edit', edit_project_post_path(@project, @post) %>
+    <% end %>
   </p>
+  <hr>
+
+  <h2><%= @post.comments.count %> Comments</h2>
+  <%= render @comments %>
+
+  <h3>Add a comment:</h3>
+  <%= render "comments/form" %>
+
 </div>

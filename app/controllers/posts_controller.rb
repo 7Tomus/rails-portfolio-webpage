@@ -1,8 +1,9 @@
 class PostsController < ApplicationController
 
   def show
-    # @project = Project.find(params[:project_id])
+    @project = Project.find(params[:project_id])
     @post = Post.find(params[:id])
+    @comments = @post.comments.all.order('created_at DESC')
   end
 
   def new
