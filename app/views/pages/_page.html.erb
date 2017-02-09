@@ -1,0 +1,14 @@
+<div id="page_wrapper">
+  <div id="profile_image">
+    <img alt="post image" src="<%= @page.image %>" />
+  </div>
+
+  <div id="content">
+    <h1>About</h1>
+    <p><%= @page.description %></p>
+
+  <% if user_signed_in? %>
+      <%= link_to 'Edit', edit_page_path(@page) %>
+  <% end %>
+  </div>
+</div>

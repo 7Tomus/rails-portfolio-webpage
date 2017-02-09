@@ -1,0 +1,19 @@
+<%= form_for @page do |f| %>
+    <% if @page.errors.any? %>
+        <div id="errors">
+          <h2><%= pluralize(@page.errors.count, "error") %> prevented page from saving</h2>
+          <ul>
+            <% @page.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <%= f.label :image %></br>
+    <%= f.text_field :image %></br>
+    <br>
+    <%= f.label :description %></br>
+    <%= f.text_area :description %></br>
+    <br>
+    <%= f.submit %>
+<% end %>
